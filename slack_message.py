@@ -19,7 +19,7 @@ class SendSlackMessage:
         self.user_name = os.getlogin()
         self.app_name = app_name
         self.app_version = app_version
-        self.bot_token = 'xoxb-4028443381488-3998150739366-nBGXzwDivwMq2S3VBPbwvcDs'
+        self.bot_token = 'here your bot token, start with: xoxb-************ '
 
     @staticmethod
     def get_location():
