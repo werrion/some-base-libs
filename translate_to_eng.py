@@ -4,10 +4,6 @@ import cyrtranslit
 
 
 class Translate:
-    """
-    Use for translate rus words in eng, from different source, with different control hidden characters
-    and other surprises
-    """
 
     def __init__(self, source_lang='auto', result_lang='en'):
         self.translator = Translator()

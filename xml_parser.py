@@ -3,19 +3,25 @@ import os
 from pathlib import Path
 
 """
-Use case:
+HELP 
+Приклад використання:
     # get data from quests.xml
     quests_raw_data = XmlParser(file_name='quests.xml', root_key='root', path=Path(os.getcwd()))
     ALL_QUESTS_ID_FROM_XML = quests_raw_data.create_named_dict(key_group_data='tree', key_data='o')['o']
-    
-    quests_raw_data.create_named_dict - form a dictionary from the specified section in such a way as to form
-    from the line <o id="10081" parent_id="0" name="House_On_Reef_Quest_0" icon_factory_id="176113" >
-    row like  {"10081": [{id="10081" parent_id="0" name="House_On_Reef_Quest_0" icon_factory_id="176113"}]}
 
-    if there will be dubbing id: 
+Де quests_raw_data всі данні з хмл 
+    file_name- тут вказуемо назву хмл 
+    root_key - корінний ключ, здебільшого це root але бувають вийнятки
+    path - шлях до файлу xml - якщо в папці з скриптом - ставимо Path(os.getcwd())
+    
+quests_raw_data.create_named_dict - формуемо словник з вказаного розділу, таким чином щоб сформувати 
+    з рядка виду  <o id="10081" parent_id="0" name="House_On_Reef_Quest_0" icon_factory_id="176113" >
+    рядок виду  {"10081": [{id="10081" parent_id="0" name="House_On_Reef_Quest_0" icon_factory_id="176113"}]}
+    таким чином ми зможемо звертатися по айді до значень 
+    якщо там будуть дубляжі айдішників наприклад: 
     <o id="10081" parent_id="0" name="House_On_Reef_Quest_0" icon_factory_id="176113" >
     <o id="10081" parent_id="21341" name="Reef_Quest_8" icon_factory_id="67688999" >
-    we get value:
+    то отримаемо 
     {"10081": [{id="10081" parent_id="0" name="House_On_Reef_Quest_0" icon_factory_id="176113"}, 
                {id="10081" parent_id="21341" name="Reef_Quest_8" icon_factory_id="67688999"}]}
 """
