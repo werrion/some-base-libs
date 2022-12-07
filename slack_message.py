@@ -3,6 +3,14 @@ import os
 from datetime import datetime
 
 
+"""
+For send message and files need:
+- in https://api.slack.com/ - section 'OAuth & Permissions' - Scopes - add rights for 
+chat:write, files:read, files:write, incoming-webhook, users:write
+- after that - go to targeted channel - preference - integrations - add aplication
+
+"""
+
 class SendSlackMessage:
     """
     Canal - using_utilities : hooks.slack.com/services/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
